@@ -1,19 +1,19 @@
 import mongoose from 'mongoose';
 
-const categorySchema = new mongoose.Schema({
+const subcategorySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
     unique: true,
     trim: true,
   },
-  product: {
+  category: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Product',
+    ref: 'Category',
     required: true,
   },
 }, { timestamps: true });
 
-const Category = mongoose.models.Category || mongoose.model('Category', categorySchema);
+const Subcategory = mongoose.models.Subcategory || mongoose.model('Subcategory', subcategorySchema);
 
-export default Category;
+export default Subcategory;
