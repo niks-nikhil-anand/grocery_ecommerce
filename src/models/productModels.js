@@ -6,6 +6,15 @@ const productSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  slug: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  isFeatured: {
+    type: Boolean,
+    default: false,
+  },
   description: {
     type: String,
     required: true,
